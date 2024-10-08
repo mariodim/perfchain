@@ -1,16 +1,26 @@
 
 # Evaluate performance of 5G service chains
 
-Here the instructions on to use Python code to evaluate the performance of 5G multi-class service chains. 
-A service chain (often known as Service Function Chain - SFC) is a structure made of virtualized nodes to be traversed in a specific order to provide a given service.
-This Python code allows to evaluate performance of an SFC-like structure made of 5G core network nodes relying on the Open5GS framework.
-The involved nodes are: the Access and Mobility Management Function (AMF) in charge of managing access and moobility, the Session Management Function (SMF) in charge of handling session establishment, and the User Plane Function (UPF) in charge of managing data plane.
+Here are the instructions for using Python code to evaluate the performance of 5G multi-class service chains.
 
-From an architectural perspective, we distinguish (see figuire below):
-- 5G Mono chain: a 5G chain made of a single path of nodes
-- 5G Poly chain: a 5G chain made of multiple paths of nodes
+A service chain (often known as a Service Function Chain - SFC) is a structure made up of virtualized nodes that must be traversed in a specific order to provide a given service.
 
-<img src="mono_poly.png" alt="My Image" width="400"/>
+This Python code allows you to evaluate the performance of an SFC-like structure composed of 5G core network nodes based on the Open5GS framework. The involved nodes include:
 
+The Access and Mobility Management Function (AMF), responsible for managing access and mobility.
+The Session Management Function (SMF), responsible for handling session establishment.
+The User Plane Function (UPF), responsible for managing the data plane.
+From an architectural perspective, we distinguish between (see figure below):
 
-Test
+- 5G Mono chain: a 5G chain composed of a single path of nodes.
+- 5G Poly chain: a 5G chain composed of multiple paths of nodes.
+<img src="mono_poly.png" alt="My Image" width="450"/>
+Both Mono and Poly deployments can be accessed by 5G user requests that belong to three different classes (gold, silver, bronze).
+
+To evaluate the performance of Mono and Poly chain deployments, we provide several Python scripts available here: https://colab.research.google.com/drive/1kPTmzspRlJvsR55Tvwfb2vMHHIwqtKTM. The page contains three software components:
+
+1) A customized parser that, when fed with logs produced by one of the Open5GS nodes (specifically, the AMF—the most critical node), returns the "average service time," which is the time taken by the AMF to manage the User Equipment (UE) registration procedure (simulated by the UERANSIM simulator) and the UE Protocol Data Unit (PDU) session establishment procedure.
+
+2) A script to estimate the overall time (using the service time derived from the parsed logs) required for Registration and PDU session establishment for the Mono chain deployment.
+
+3) A script to estimate the overall time (using the service time derived from the parsed logs) required for Registration and PDU session establishment for the Poly chain deployment.
