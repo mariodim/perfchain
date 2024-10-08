@@ -16,6 +16,7 @@ From an architectural perspective, we distinguish between (see figure below):
 - 5G Poly chain: a 5G chain composed of multiple paths of nodes.
 <img src="mono_poly.png" alt="My Image" width="450"/>
 Both Mono and Poly deployments can be accessed by 5G user requests that belong to three different classes (gold, silver, bronze).
+Moreover, each 5G node is connected to the other one via routing probability p_{ij}
 
 To evaluate the performance of Mono and Poly chain deployments, we provide several Python scripts available here: https://colab.research.google.com/drive/1kPTmzspRlJvsR55Tvwfb2vMHHIwqtKTM. 
 The page contains three software components:
