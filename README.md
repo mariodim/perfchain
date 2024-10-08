@@ -17,10 +17,13 @@ From an architectural perspective, we distinguish between (see figure below):
 <img src="mono_poly.png" alt="My Image" width="450"/>
 Both Mono and Poly deployments can be accessed by 5G user requests that belong to three different classes (gold, silver, bronze).
 
-To evaluate the performance of Mono and Poly chain deployments, we provide several Python scripts available here: https://colab.research.google.com/drive/1kPTmzspRlJvsR55Tvwfb2vMHHIwqtKTM. The page contains three software components:
+To evaluate the performance of Mono and Poly chain deployments, we provide several Python scripts available here: https://colab.research.google.com/drive/1kPTmzspRlJvsR55Tvwfb2vMHHIwqtKTM. 
+The page contains three software components:
 
 1) A customized parser that, when fed with logs produced by one of the Open5GS nodes (specifically, the AMF—the most critical node), returns the "average service time," which is the time taken by the AMF to manage the User Equipment (UE) registration procedure (simulated by the UERANSIM simulator) and the UE Protocol Data Unit (PDU) session establishment procedure.
 
-2) A script to estimate the overall time (using the service time derived from the parsed logs) required for Registration and PDU session establishment for the Mono chain deployment.
+2) A customized script to estimate the overall time (using the service time derived from the parsed logs) required for Registration and PDU session establishment for the Mono chain deployment.
 
-3) A script to estimate the overall time (using the service time derived from the parsed logs) required for Registration and PDU session establishment for the Poly chain deployment.
+3) A customized script to estimate the overall time (using the service time derived from the parsed logs) required for Registration and PDU session establishment for the Poly chain deployment.
+
+Scripts 2) and 3) implement the concept of non-product-form queueing networks, specifically utilizing the Decomposition Algorithm. This approach is based on the principle of dividing a large system (the queue of nodes) into smaller subsystems that can be analyzed independently.
