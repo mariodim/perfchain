@@ -32,4 +32,5 @@ The page contains three software components:
 Scripts 2) and 3) implement the concept of non-product-form queueing networks, specifically utilizing the Decomposition Algorithm. This approach is based on the principle of dividing a large system (the queue of nodes) into smaller subsystems that can be analyzed independently.
 
 [1] Open5GS.org
+
 [2] https://github.com/aligungr/UERANSIM
