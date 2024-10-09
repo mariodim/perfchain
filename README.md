@@ -21,7 +21,7 @@ Moreover, each 5G node is connected to the other one via routing probability p<s
 The Radio Access Network part has been simulated with UERANSIM[2] which includes a User Equipment (UE) simulator, and a gNodeB (gNB) simulator. Once connected to the Open5GS core network (and, in particular, to the AMF), it is possible to simulate Registration and Protocol Data Unit (PDU) stages through the command *./build/nr-ue -c config/open5gs-ue.yaml*
 
 To evaluate the performance of Mono and Poly chain deployments, we provide several Python scripts available here: https://colab.research.google.com/drive/1kPTmzspRlJvsR55Tvwfb2vMHHIwqtKTM. 
-The page contains three software components:
+In particular, we provide three scripts:
 
 1) A customized parser that, when fed with logs produced by one of the Open5GS nodes (specifically, the AMF—the most critical node), returns the "average service time," which is the time taken by the AMF to manage the User Equipment (UE) registration procedure (simulated by the UERANSIM simulator) and the UE Protocol Data Unit (PDU) session establishment procedure.
 
