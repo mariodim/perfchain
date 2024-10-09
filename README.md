@@ -5,7 +5,7 @@ Here are the instructions for using Python code to evaluate the performance of 5
 
 A service chain (often known as a Service Function Chain - SFC) is a structure made up of virtualized nodes that must be traversed in a specific order to provide a given service.
 
-This Python code allows you to evaluate the performance of an SFC-like structure composed of 5G core network nodes based on the Open5GS framework. The involved nodes include:
+This Python code allows you to evaluate the performance of an SFC-like structure composed of 5G core network nodes based on the Open5GS framework[1]. The involved nodes include:
 
 The Access and Mobility Management Function (AMF), responsible for managing access and mobility.
 The Session Management Function (SMF), responsible for handling session establishment.
@@ -18,6 +18,8 @@ From an architectural perspective, we distinguish between (see figure below):
 Both Mono and Poly deployments can be accessed by 5G user requests that belong to three different classes (gold, silver, bronze).
 Moreover, each 5G node is connected to the other one via routing probability p<sub>ij</sub>.
 
+The Radio Access Network part has been simulated with UERANSIM[2] which includes a User Equipment (UE) simulator, and a gNodeB (gNB) simulator. Once connected to the Open5GS core network (and, in particular, to the AMF), it is possible to simulate Registration and Protocol Data Unit (PDU) stages through the command *./build/nr-ue -c config/open5gs-ue.yaml*
+
 To evaluate the performance of Mono and Poly chain deployments, we provide several Python scripts available here: https://colab.research.google.com/drive/1kPTmzspRlJvsR55Tvwfb2vMHHIwqtKTM. 
 The page contains three software components:
 
@@ -28,3 +30,6 @@ The page contains three software components:
 3) A customized script to estimate the overall time (using the service time derived from the parsed logs) required for Registration and PDU session establishment for the Poly chain deployment.
 
 Scripts 2) and 3) implement the concept of non-product-form queueing networks, specifically utilizing the Decomposition Algorithm. This approach is based on the principle of dividing a large system (the queue of nodes) into smaller subsystems that can be analyzed independently.
+
+[1] Open5GS.org
+[2] https://github.com/aligungr/UERANSIM
