@@ -18,7 +18,8 @@ From an architectural perspective, we distinguish between (see figure below):
 Both Mono and Poly deployments can be accessed by 5G user requests that belong to three different classes (gold, silver, bronze).
 Moreover, each 5G node is connected to the other one via routing probability p<sub>ij</sub>.
 
-The Radio Access Network part has been simulated with UERANSIM[2] which includes a User Equipment (UE) simulator, and a gNodeB (gNB) simulator. Once connected to the Open5GS core network (and, in particular, to the AMF), it is possible to simulate Registration and Protocol Data Unit (PDU) stages through the command *./build/nr-ue -c config/open5gs-ue.yaml*
+The Radio Access Network part has been simulated with UERANSIM[2] which includes a User Equipment (UE) simulator, and a gNodeB (gNB) simulator. Once connected to the Open5GS core network (and, in particular, to the AMF), it is possible to simulate Registration and Protocol Data Unit (PDU) stages through the command:
+*./build/nr-ue -c config/open5gs-ue.yaml*
 
 To evaluate the performance of Mono and Poly chain deployments, we provide several Python scripts available here: https://colab.research.google.com/drive/1kPTmzspRlJvsR55Tvwfb2vMHHIwqtKTM. 
 In particular, we provide three scripts:
