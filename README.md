@@ -18,8 +18,7 @@ From an architectural perspective, we distinguish between (see figure below):
 Both Mono and Poly deployments can be accessed by 5G user requests that belong to three different classes (gold, silver, bronze).
 Moreover, each 5G node is connected to the other one via routing probability p<sub>ij</sub>.
 
-The Radio Access Network part has been simulated with UERANSIM[2] which includes a User Equipment (UE) simulator, and a gNodeB (gNB) simulator. Once connected to the Open5GS core network (and, in particular, to the AMF), it is possible to simulate Registration and Protocol Data Unit (PDU) stages through the command:
-*./build/nr-ue -c config/open5gs-ue.yaml*
+The Radio Access Network part has been simulated with UERANSIM[2] which includes a User Equipment (UE) simulator, and a gNodeB (gNB) simulator. Once connected to the Open5GS core network (and, in particular, to the AMF), it is possible to simulate Registration and Protocol Data Unit (PDU) stages.
 
 To evaluate the performance of Mono and Poly chain deployments, we provide several Python scripts available here: https://colab.research.google.com/drive/1kPTmzspRlJvsR55Tvwfb2vMHHIwqtKTM. 
 In particular, we provide three scripts:
@@ -31,6 +30,8 @@ In particular, we provide three scripts:
 3) A customized script to estimate the overall time (using the service time derived from the parsed logs) required for Registration and PDU session establishment for the Poly chain deployment.
 
 Scripts 2) and 3) implement the concept of non-product-form queueing networks, specifically utilizing the Decomposition Algorithm. This approach is based on the principle of dividing a large system (the queue of nodes) into smaller subsystems that can be analyzed independently.
+
+Moreover, in the same colab environment is present a final section with main commands to interact with Open5GS and UERANSIM plus instructions for generating emualted 5G traffic. 
 
 [1] Open5GS.org
 
