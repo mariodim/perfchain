@@ -31,7 +31,7 @@ In particular, we provide three scripts:
 
 Scripts 2) and 3) implement the concept of non-product-form queueing networks, specifically utilizing the Decomposition Algorithm. This approach is based on the principle of dividing a large system (the queue of nodes) into smaller subsystems that can be analyzed independently.
 
-Moreover, in the same colab environment is present a final section with main commands to interact with Open5GS and UERANSIM plus instructions for generating emualted 5G traffic. 
+Moreover, in the same colab environment, there is a last (commented) section containing principal commands to interact with Open5GS and UERANSIM, and instructions for generating emulated 5G traffic. 
 
 [1] Open5GS.org
 
